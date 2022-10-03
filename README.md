@@ -17,4 +17,4 @@
 - Senha: admin123
 
 ## Executável
- Arquivo executável em **Releases**. 
+ Arquivo executável em **Releases**. Necessário Runtime do .Net Core instalado.
