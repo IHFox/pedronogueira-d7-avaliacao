@@ -30,9 +30,8 @@ namespace pedronogueira_d7_avaliacao
 
 
 
-            if (true)// (_security.IsValidEmail(login)) // Checar se é um endereço de e-mail
+            if (_security.IsValidEmail(login)) // Checar se é um endereço de e-mail
             {
-
                 user = _user.UserConnect(login, password); // Acessar banco de dados
                 if (user != null) // Checar acesso
                 {
@@ -42,6 +41,10 @@ namespace pedronogueira_d7_avaliacao
                 {
                     txtResult.Content = "Credenciais Inválidas!";
                 }
+            }
+            else
+            {
+                txtResult.Content = "Digite um e-mail válido!";
             }
 
         }
