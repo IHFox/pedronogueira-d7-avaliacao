@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pedronogueira_d7_avaliacao"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="D7 - Avaliação"
+        Style="{StaticResource defaultStyle}"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="CanMinimize">
 
+    <!--Layout da janela-->
+    <Grid Width="480" Height="660">
+        
+        <!--Overlay do pop up-->
+        <Grid x:Name="Overlay" Panel.ZIndex="1000" Visibility="Collapsed" Opacity="0">
+            <Label Width="300" Height="180" Background="#FFF"
+                   VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                   FontSize="24" Content="Credenciais Inválidas!"/>
+            <Grid.Background>
+                <SolidColorBrush Color="#000" Opacity=".6"/>
+            </Grid.Background>
+        </Grid>
+
+        <Label Style="{StaticResource TitleText}" Margin="0,60,0,0" Content="Autenticação de usuário"/>
+        <Label Margin="0,145,0,0" Content="Usuário"/>
+        <TextBox Margin="0,180,0,0"/>
+        <Label Margin="0,325,0,0" Content="Senha"/>
+        <PasswordBox Margin="0,360,0,0"/>
+        <Button Width="240" Height="60" Margin="0,0,0,60" Content="Acessar" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

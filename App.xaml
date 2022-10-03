@@ -4,6 +4,97 @@
              xmlns:local="clr-namespace:pedronogueira_d7_avaliacao"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <FontFamily x:Key="fontInter" >/Fonts/#Inter</FontFamily>
+        
+        <!--Estilo padrão para toda a janela-->
+        <Style x:Key="defaultStyle">
+            <Setter Property="Control.FontFamily"
+        Value="{StaticResource fontInter}" />
+            <Setter Property="Control.FontSize"
+        Value="16" />
+            <Setter Property="Control.Foreground"
+        Value="#000"/>
+            <Setter Property="Control.FontWeight"
+        Value="400"/>
+            <Setter Property="Control.VerticalAlignment"
+        Value="Top" />
+            <Setter Property="Control.HorizontalAlignment"
+        Value="Center" />
+            <Setter Property="Control.HorizontalContentAlignment"
+        Value="Left" />
+        </Style>
+
+        <!--Estilo para labels-->
+        <Style TargetType="{x:Type Label}"
+               BasedOn="{StaticResource defaultStyle}">
+            <Setter Property="Width"
+        Value="360"/>
+            <Setter Property="Padding"
+        Value="0,0,0,0" />
+        </Style>
+
+        <!--Estilo para títulos-->
+        <Style BasedOn="{StaticResource {x:Type Label}}"
+           TargetType="{x:Type Label}"
+           x:Key="TitleText">
+            <Setter Property="FontSize"
+                    Value="24"/>
+            <Setter Property="FontWeight"
+                    Value="700"/>
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center"/>
+        </Style>
+
+        <!--Estilo para textboxes-->
+        <Style TargetType="{x:Type TextBox}"
+               BasedOn="{StaticResource defaultStyle}">
+            <Setter Property="Width"
+        Value="360" />
+            <Setter Property="Height"
+        Value="60" />
+            <Setter Property="Background"
+        Value="#D9D9D9"/>
+            <Setter Property="BorderThickness"
+        Value="0"/>
+            <Setter Property="HorizontalContentAlignment"
+        Value="Left" />
+            <Setter Property="VerticalContentAlignment"
+        Value="Center" />
+            <Setter Property="Padding"
+        Value="10,10,10,10" />
+        </Style>
+
+        <!--Estilo para passwordboxes igual textboxes, não funcionou based on-->
+        <Style TargetType="{x:Type PasswordBox}"
+               BasedOn="{StaticResource defaultStyle}">
+            <Setter Property="Width"
+        Value="360" />
+            <Setter Property="Height"
+        Value="60" />
+            <Setter Property="Background"
+        Value="#D9D9D9"/>
+            <Setter Property="BorderThickness"
+        Value="0"/>
+            <Setter Property="HorizontalContentAlignment"
+        Value="Left" />
+            <Setter Property="VerticalContentAlignment"
+        Value="Center" />
+            <Setter Property="Padding"
+        Value="10,10,10,10" />
+        </Style>
+
+        <!--Estilo para botões-->
+        <Style TargetType="{x:Type Button}"
+               BasedOn="{StaticResource defaultStyle}">
+            <Setter Property="Background"
+        Value="#D9D9D9"/>
+            <Setter Property="BorderThickness"
+        Value="0"/>
+            <Setter Property="HorizontalContentAlignment"
+        Value="Center" />
+            <Setter Property="VerticalContentAlignment"
+        Value="Center" />
+        </Style>
     </Application.Resources>
 </Application>
