@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using pedronogueira_d7_avaliacao.Models;
+using pedronogueira_d7_avaliacao.Repositories;
 
 namespace pedronogueira_d7_avaliacao
 {
@@ -23,6 +12,38 @@ namespace pedronogueira_d7_avaliacao
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ValidateAccess_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            string login;
+            string password;
+            publicUser user = new();
+
+            UserRepository _user = new();
+            SecurityRepository _security = new();
+
+            login = txtUser.Text;
+            password = txtPass.Password.ToString(); // Estudar usar propriedade SecurePassword ao invés de Password
+
+
+
+            if (true)// (_security.IsValidEmail(login)) // Checar se é um endereço de e-mail
+            {
+
+                user = _user.UserConnect(login, password); // Acessar banco de dados
+                if (user != null) // Checar acesso
+                {
+                    txtResult.Content = "Usuário Autenticado!";
+                }
+                else
+                {
+                    txtResult.Content = "Credenciais Inválidas!";
+                }
+            }
+
         }
     }
 }
